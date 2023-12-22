@@ -80,3 +80,20 @@ h1, h2, h3, h4, h5, h6 {
     background-position: center;
     background-repeat: no-repeat;
 }
+
+.logo-light-theme {
+    display: block; /* Shown by default */
+}
+
+.logo-dark-theme {
+    display: none; /* Hidden by default */
+}
+
+/* Assuming you have a class on the body or a parent element for dark theme */
+.dark-theme .logo-light-theme {
+    display: none; /* Hide the light theme logo */
+}
+
+.dark-theme .logo-dark-theme {
+    display: block; /* Show the dark theme logo */
+}
