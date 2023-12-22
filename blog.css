@@ -1,5 +1,29 @@
 /* stylelint-disable stylistic/selector-list-comma-newline-after */
 
+:root {
+    --background-image: url('https://davidaflynn.com/bg-1.png');
+    --background-image-dark: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), var(--background-image);
+}
+
+[data-bs-theme="light"] .bg-image,
+[data-bs-theme="auto"] .bg-image,
+.light-mode .bg-image {
+    background-image: var(--background-image);
+    /* Other styles here */
+}
+
+[data-bs-theme="dark"] .bg-image,
+.dark-mode .bg-image {
+    background-image: var(--background-image-dark);
+    /* Other styles here */
+}
+
+.bg-image {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 .blog-header-logo {
   font-family: "Playfair Display", Georgia, "Times New Roman", serif/*rtl:Amiri, Georgia, "Times New Roman", serif*/;
   font-size: 2.25rem;
@@ -38,9 +62,21 @@ h1, h2, h3, h4, h5, h6 {
   color: #727272;
 }
 
+[data-bs-theme="light"] .bg-image,
+[data-bs-theme="auto"] .bg-image,
+.light-mode .bg-image {
+    background-image: var(--background-image);
+    /* Other styles here */
+}
+
+[data-bs-theme="dark"] .bg-image,
+.dark-mode .bg-image {
+    background-image: var(--background-image-dark);
+    /* Other styles here */
+}
+
 .bg-image {
-    background-image: url('https://davidaflynn.com/bg-1.png'); /* Replace with the path to your image */
-    background-size: cover; /* This will make sure the image covers the entire div */
-    background-position: center; /* This will center the image in the div */
-    background-repeat: no-repeat; /* This will prevent the image from repeating */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }

@@ -1,7 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\assets",
+    "\\assets\\dist",
+    "\\assets\\dist\\css",
+    "\\assets\\dist\\js",
+    "\\assets\\js"
   ],
-  "SelectedNode": "\\C:\\Users\\micha\\Source\\Repos\\2024-David_A_Flynn_Website",
+  "SelectedNode": "\\assets\\dist\\css\\bootstrap.min.css",
   "PreviewInSolutionExplorer": false
 }
