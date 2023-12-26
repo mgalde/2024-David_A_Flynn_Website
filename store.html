@@ -15,6 +15,67 @@
     <link href="https://mgalde.github.io/2024-David_A_Flynn_Website/assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
+        .sale-item-container img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .sale-item-description {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Additional styling for expanded card */
+        .expanded-card .sale-item-image {
+            width: 100%;
+        }
+
+        .expanded-card .sale-item-description {
+            -webkit-line-clamp: unset;
+        }
+
+        /* Modal styling for expanded view */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            padding-top: 100px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+            .close:hover,
+            .close:focus {
+                color: black;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
         .sale-item-container {
             border: 1px solid #ddd;
             padding: 15px;
@@ -221,46 +282,16 @@
 
         <div class="row">
             <!-- Example of a Sale Item Container -->
-            <div class="col-md-4">
-                <div class="sale-item-container">
-                    <img src="https://mgalde.github.io/2024-David_A_Flynn_Website/assets/images/aa1.jpg" alt="Item Image" class="Barb Wire Table">
+            <div class="col-md-4 col-sm-12">
+                <div class="sale-item-container" onclick="expandCard(this)">
+                    <img src="https://mgalde.github.io/2024-David_A_Flynn_Website/assets/images/aa1.jpg" alt="Barb Wire Table" class="sale-item-image">
                     <h3 class="sale-item-title">Barb Wire Table</h3>
                     <p class="sale-item-description">
-                        Here we see  a barb wire table created by the artist David Flynn. The table features a rectangular top crafted from what appears to be reclaimed wood, with visible grain and knots contributing to its rustic character. Several darker burn marks or stains add an element of uniqueness to each plank. The edges of the table top display an intricate, dark metal band with rivet-like details, possibly made from forged steel, enhancing the handcrafted look.
-
-                        Supporting the table is a sturdy base constructed of metal that has been worked into an intriguing design. Four curved legs, evocative of traditional blacksmithing techniques, provide stability. The centerpiece of the base is a twisted bundle of barbed wire, skillfully shaped and fixed around a central, vertically oriented spindle, which likely allows for height adjustment. This barbed wire is not only functional but also a striking design element that gives the table its name and a touch of the untamed West.
-
-                        The entire piece reflects a blend of materials and textures, marrying the warm, organic wood with the cool, hard metal. It's clear that the artist has a strong grasp of traditional blacksmithing techniques, which is demonstrated in the craftsmanship of the metal components. The table exudes a rugged elegance, suggesting it would be well-suited for a space that appreciates both artistry and historical craftsmanship..
+                        Here we see a barb wire table created by the artist David Flynn. The table features a rectangular top crafted from what appears to be reclaimed wood...
                     </p>
-                    <p class="sale-item-price">$745.55</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="sale-item-container">
-                    <img src="https://mgalde.github.io/2024-David_A_Flynn_Website/assets/images/aa1.jpg" alt="Item Image" class="Barb Wire Table">
-                    <h3 class="sale-item-title">Barb Wire Table</h3>
-                    <p class="sale-item-description">
-                        Here we see  a barb wire table created by the artist David Flynn. The table features a rectangular top crafted from what appears to be reclaimed wood, with visible grain and knots contributing to its rustic character. Several darker burn marks or stains add an element of uniqueness to each plank. The edges of the table top display an intricate, dark metal band with rivet-like details, possibly made from forged steel, enhancing the handcrafted look.
-
-                        Supporting the table is a sturdy base constructed of metal that has been worked into an intriguing design. Four curved legs, evocative of traditional blacksmithing techniques, provide stability. The centerpiece of the base is a twisted bundle of barbed wire, skillfully shaped and fixed around a central, vertically oriented spindle, which likely allows for height adjustment. This barbed wire is not only functional but also a striking design element that gives the table its name and a touch of the untamed West.
-
-                        The entire piece reflects a blend of materials and textures, marrying the warm, organic wood with the cool, hard metal. It's clear that the artist has a strong grasp of traditional blacksmithing techniques, which is demonstrated in the craftsmanship of the metal components. The table exudes a rugged elegance, suggesting it would be well-suited for a space that appreciates both artistry and historical craftsmanship..
+                    <p class="sale-item-price">
+                        <a href="mailto:David@DavidAFlynn.com?subject=Purchase Inquiry: Barb Wire Table&body=I would like to purchase the Barb Wire Table. Please provide further details.">$745.55</a>
                     </p>
-                    <p class="sale-item-price">$745.55</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="sale-item-container">
-                    <img src="https://mgalde.github.io/2024-David_A_Flynn_Website/assets/images/aa1.jpg" alt="Item Image" class="Barb Wire Table">
-                    <h3 class="sale-item-title">Barb Wire Table</h3>
-                    <p class="sale-item-description">
-                        Here we see  a barb wire table created by the artist David Flynn. The table features a rectangular top crafted from what appears to be reclaimed wood, with visible grain and knots contributing to its rustic character. Several darker burn marks or stains add an element of uniqueness to each plank. The edges of the table top display an intricate, dark metal band with rivet-like details, possibly made from forged steel, enhancing the handcrafted look.
-
-                        Supporting the table is a sturdy base constructed of metal that has been worked into an intriguing design. Four curved legs, evocative of traditional blacksmithing techniques, provide stability. The centerpiece of the base is a twisted bundle of barbed wire, skillfully shaped and fixed around a central, vertically oriented spindle, which likely allows for height adjustment. This barbed wire is not only functional but also a striking design element that gives the table its name and a touch of the untamed West.
-
-                        The entire piece reflects a blend of materials and textures, marrying the warm, organic wood with the cool, hard metal. It's clear that the artist has a strong grasp of traditional blacksmithing techniques, which is demonstrated in the craftsmanship of the metal components. The table exudes a rugged elegance, suggesting it would be well-suited for a space that appreciates both artistry and historical craftsmanship..
-                    </p>
-                    <p class="sale-item-price">$745.55</p>
                 </div>
             </div>
             <!-- Repeat the above div block for each item -->
@@ -289,6 +320,47 @@
             </div>
         </div>
         </div>
+        <script>
+            function expandCard(element) {
+                // Toggle the expanded class on the container
+                element.classList.toggle('expanded-card');
+
+                // Create the modal view for expanded card
+                var modal = document.createElement('div');
+                modal.classList.add('modal');
+
+                // Content inside modal
+                var modalContent = document.createElement('div');
+                modalContent.classList.add('modal-content');
+                modalContent.innerHTML = element.innerHTML; // Copy the content of the item into the modal
+
+                // Close button
+                var closeBtn = document.createElement('span');
+                closeBtn.classList.add('close');
+                closeBtn.innerHTML = '&times;';
+                closeBtn.onclick = function () {
+                    modal.style.display = 'none';
+                    modal.remove();
+                };
+
+                // Append close button and content to modal
+                modalContent.appendChild(closeBtn);
+                modal.appendChild(modalContent);
+
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function (event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                        modal.remove();
+                    }
+                };
+
+                // Show the modal
+                document.body.appendChild(modal);
+                modal.style.display = 'block';
+            }
+
+        </script>
 
     </main>
 
