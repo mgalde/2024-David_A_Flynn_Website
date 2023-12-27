@@ -314,8 +314,8 @@
         </div>
         <script>
             function expandCard(element) {
-                // Toggle the expanded class on the container
-                element.classList.toggle('expanded-card');
+                // Copy the content of the item into the modal
+                var contentClone = element.cloneNode(true);
 
                 // Create the modal view for expanded card
                 var modal = document.createElement('div');
@@ -324,7 +324,7 @@
                 // Content inside modal
                 var modalContent = document.createElement('div');
                 modalContent.classList.add('modal-content');
-                modalContent.innerHTML = element.innerHTML; // Copy the content of the item into the modal
+                modalContent.appendChild(contentClone);
 
                 // Close button
                 var closeBtn = document.createElement('span');
@@ -335,8 +335,23 @@
                     modal.remove();
                 };
 
-                // Append close button and content to modal
-                modalContent.appendChild(closeBtn);
+                // Increase the image size by 30%
+                var image = modalContent.querySelector('.sale-item-image');
+                image.style.width = '50%';
+                image.style.height = 'auto';
+                image.style.display = 'block';
+                image.style.margin = '0 auto'; // Center the image
+
+                // Adjust the description to show fully
+                var description = modalContent.querySelector('.sale-item-description');
+                description.style.webkitLineClamp = 'unset';
+                description.style.overflow = 'visible';
+                description.style.textOverflow = 'clip';
+
+                // Append close button to modal content
+                modalContent.insertBefore(closeBtn, modalContent.firstChild);
+
+                // Append modal content to modal
                 modal.appendChild(modalContent);
 
                 // When the user clicks anywhere outside of the modal, close it
